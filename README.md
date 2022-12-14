@@ -1,2 +1,2 @@
 # ShotMeDown
-# Personal Project in Preparation for ICT1009
+Personal project in preparation for ICT1009
