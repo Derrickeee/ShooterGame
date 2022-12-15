@@ -10,11 +10,11 @@ public class StartGame extends JFrame{
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setTitle("Shot Me Down");
-
-        Board game = new Board();
+        frame.setTitle("Shooter Game");
+       
+        Game game = new Game();
         frame.getContentPane().add(game);
-        frame.setMinimumSize(new Dimension(680, 370));
+        frame.setMinimumSize(new Dimension(800, 600));
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
