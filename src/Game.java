@@ -7,8 +7,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 //Main Game Logic File
-public class Game extends JPanel implements ActionListener, KeyListener {
-	private boolean newGame = false;
+public class Game extends JPanel {
+	/*private boolean newGame = false;
 	private boolean instructions = false;
 	private boolean lb = false;
 
@@ -17,7 +17,7 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 	 */
 
 
-	private JButton start, control, sound, leaderboard;
+	/*private JButton begin, control, sound, leaderboard;
 
 	private int soundCount = 1;
 
@@ -31,39 +31,39 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 
 
 		// Create button component, set image, remove borders.
-		//start = new JButton(new ImageIcon(getClass().getResource("Flash/newstart.png")));
+		begin = new JButton(new ImageIcon(getClass().getResource("images/newstart.png")));
 		//start.setBorder(BorderFactory.createEmptyBorder());
 		//control = new JButton(new ImageIcon(getClass().getResource("Flash/howtoplay.png")));
 		//control.setBorder(BorderFactory.createEmptyBorder());
-		sound = new JButton(new ImageIcon(getClass().getResource("Flash/hearsound.png")));
-		sound.setBorder(BorderFactory.createEmptyBorder());
+		sound = new JButton(new ImageIcon(getClass().getResource("images/hearsound.png")));
+		//sound.setBorder(BorderFactory.createEmptyBorder());
 		//leaderboard = new JButton(new ImageIcon(getClass().getResource("Flash/leaderboard.png")));
 		//leaderboard.setBorder(BorderFactory.createEmptyBorder());
 
 
-		// Trigger at the start of the game when there isnt any sound
+		// Trigger at the start of the game when there isn't any sound
 
-		sound.setIcon(new ImageIcon(getClass().getResource("Flash/hearsound.png")));
+		sound.setIcon(new ImageIcon(getClass().getResource("images/hearsound.png")));
 
 		//Listener for button clicking
-		//start.addActionListener(this);
+	begin.addActionListener(this);
 		//control.addActionListener(this);
 		sound.addActionListener(this);
 		//leaderboard.addActionListener(this);
 
 		//Append the buttons onto the frame
 
-		//add(start);
+		add(begin);
 		//add(control);
 		add(sound);
 		//add(leaderboard);
 
 		// Display start and control button
 
-		//start.setBounds(445, 350, 300, 100);
+		begin.setBounds(445, 50, 300, 100);
 		//control.setBounds(475, 500, 240, 50);
-		sound.setBounds(100, 100, 40, 40);
-		//sound.setFocusPainted(false);
+		sound.setBounds(100, 100, 200, 200);
+		sound.setFocusPainted(false);
 		//leaderboard.setBounds(475, 600, 240, 50);
 
 		// Create key listeners for each player
@@ -85,16 +85,19 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 			//check if sound is on.
 			if (soundCount == 1) {
 				soundCount = 0;
-				sound.setIcon(new ImageIcon(getClass().getResource("Flash/mutesound.png")));
+				sound.setIcon(new ImageIcon(getClass().getResource("images/mutesound.png")));
 				SoundEffect.stop();
 				//check if sound is off.
 			} else if (soundCount == 0) {
 				soundCount = 1;
-				sound.setIcon(new ImageIcon(getClass().getResource("Flash/hearsound.png")));
+				sound.setIcon(new ImageIcon(getClass().getResource("images/hearsound.png")));
 				SoundEffect.setFile("Flash/Sounds/bgmusic.wav");
 				SoundEffect.play();
 				SoundEffect.loop();
 			}
+		}
+		else if (e.getSource() == begin) {
+			newGame();
 		}
 	}
 
@@ -112,5 +115,23 @@ public class Game extends JPanel implements ActionListener, KeyListener {
 	public void keyReleased(KeyEvent e) {
 
 	}
-}
+	
+	/**
+	 * Method that starts a new game.
+	 */
+	private void newGame() {
+		/*if (newGame) {
+			// Get this JFrame and destroy it.
+			JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+			frame.dispose();*/
+
+			// Create new main menu JFrame.
+
+
+	//new StartGame(false, soundCount);
+
+		}
+	}
+
+
 

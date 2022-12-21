@@ -13,10 +13,10 @@ import java.awt.*;
 class Sprite {
 
 	// Sprite location.
-	private double xloc, yloc;
+	private double xlocation, ylocation;
 
 	// Sprite direction.
-	private double xdir, ydir;
+	private double xdirection, ydirection;
 
 	// Holds the image of the sprite.
 	private ImageIcon image;
@@ -32,10 +32,10 @@ class Sprite {
 	 */
 	Sprite() {
 		image = null;
-		xloc = 0;
-		yloc = 0;
-		xdir = 0;
-		ydir = 0;
+		xlocation = 0;
+		ylocation = 0;
+		xdirection = 0;
+		ydirection = 0;
 	}
 
 	/**
@@ -43,16 +43,16 @@ class Sprite {
 	 */
 	public Sprite(String filename, int xloc, int yloc) {
 		setImage(filename);
-		this.xloc = xloc;
-		this.yloc = yloc;
+		this.xlocation = xloc;
+		this.ylocation = yloc;
 	}
 
 	/**
 	 * Constructor that takes the location as the argument.
 	 */
 	public Sprite(int xloc, int yloc) {
-		this.xloc = xloc;
-		this.yloc = yloc;
+		this.xlocation = xloc;
+		this.ylocation = yloc;
 	}
 
 	/**
@@ -81,7 +81,7 @@ class Sprite {
 	 */
 	// Get xloc.
 	public int getXLoc() {
-		return (int) xloc;
+		return (int) xlocation;
 	}
 
 	/*
@@ -89,37 +89,37 @@ class Sprite {
 	 */
 	// Sets xloc.
 	public void setXLoc(int xloc) {
-		this.xloc = xloc;
+		this.xlocation = xloc;
 	}
 
 	// Get yloc.
 	public int getYLoc() {
-		return (int) yloc;
+		return (int) ylocation;
 	}
 
 	// Sets yloc.
 	public void setYLoc(int yloc) {
-		this.yloc = yloc;
+		this.ylocation = yloc;
 	}
 
 	// Get xdir.
 	public double getXDir() {
-		return xdir;
+		return xdirection;
 	}
 
 	// Sets xdir.
 	void setXDir(double xdir) {
-		this.xdir = xdir;
+		this.xdirection = xdir;
 	}
 
 	// Get ydir.
 	public double getYDir() {
-		return ydir;
+		return ydirection;
 	}
 
 	// Sets ydir.
 	public void setYDir(double ydir) {
-		this.ydir = ydir;
+		this.ydirection = ydir;
 	}
 
 	// Get image filename.
@@ -131,8 +131,8 @@ class Sprite {
 	 * Moves character by adding the direction to the location.
 	 */
 	public void move() {
-		xloc += xdir;
-		yloc += ydir;
+		xlocation += xdirection;
+		ylocation += ydirection;
 	}
 
 	// Return the width of the sprite
@@ -159,9 +159,9 @@ class Sprite {
 	public void paint(Graphics g, JPanel panel) {
 		if (show) {
 			if (image == null)
-				g.drawRect((int) xloc, (int) yloc, 50, 50);
+				g.drawRect((int) xlocation, (int) ylocation, 50, 50);
 			else
-				image.paintIcon(panel, g, (int) xloc, (int) yloc);
+				image.paintIcon(panel, g, (int) xlocation, (int) ylocation);
 		}
 	}
 	/**

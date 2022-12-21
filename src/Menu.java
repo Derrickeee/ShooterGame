@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+//import com.badlogic.gdx.scenes.scene2d.Stage;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,5 +16,8 @@ public class Menu extends State{
 
 		
 	}
+	   public void resize(int width, int height) {
+	        //stage.getViewport().update(width, height, true);
+	    }
 
 }
